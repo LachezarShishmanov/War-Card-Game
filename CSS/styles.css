@@ -27,11 +27,11 @@
   }
   
   .computer-deck {
-    background-color: green;
+    background-color: black;
   }
   
   .player-deck {
-    background-color: blue;
+    background-color: red;
   }
   
   .text {

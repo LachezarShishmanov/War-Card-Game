@@ -1,64 +1,5 @@
-/*
-const suits = ["♠", "♣", "♥", "♦"]; //creating global variable for the suits
-const values = [
-  "A",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "J",
-  "Q",
-  "K",
-]; // creating global variable for the values
 
-class Deck {
-  // creating a class for our deck of cards
-  constructor(cards = freshDeck()) {
-    //passing cards in the constructor
-    this.cards = cards;
-       }
-
-       get numberOfCards() {
-        return this.cards.length
-    }
-
-
-    shuffle()  { 
-       for (let i = this.numberOfCards - 1; i > 0; i--) {
-        const newIndex = Math.floor(Math.random() * (i + 1))
-        const oldValue = this.cards[newIndex]
-        this.cards[newIndex] = this.cards[i]
-        this.cards[i] = oldValue 
-      }
-    }
- }
-
-
-class card {
-  //creating class for the cards
-  constructor(suit, value) {
-    //each card has a suit and value. We pass a suit and value into the constructor
-    this.suit = suit;
-    this.value = value;
-  }
-}
-
-function freshDeck() {                 //Creating fresh deck of cards with 52 cards with all the suits and value combination
-   return suits.flatMap(suite => {     //Loop through all the suites and all the values and combine them into one array flatMap the same like map function but combines multiple arrays in one single array
-    return values.map(value => {       //loop through all the values and map them into array
-        return new card(suite, value)
-     
-    
-    })
-})                            
-}
-*/
-const SUITS = ["♠", "♣", "♥", "♦"]
+const SUITS = ["♠", "♣", "♥", "♦"]    //creating global variable for the suits
 const VALUES = [
   "A",
   "2",
@@ -75,8 +16,8 @@ const VALUES = [
   "K"
 ]
 
-class Deck {
-  constructor(cards = freshDeck()) {
+class Deck {                            // creating a class for our deck of cards
+  constructor(cards = freshDeck()) {    //passing cards in the constructor
     this.cards = cards
   }
 
@@ -102,8 +43,8 @@ class Deck {
   }
 }
 
-class Card {
-  constructor(suit, value) {
+class Card {                      //creating class for the cards
+  constructor(suit, value) {      //each card has a suit and value. We pass a suit and value into the constructor
     this.suit = suit
     this.value = value
   }
@@ -121,9 +62,9 @@ class Card {
   }
 }
 
-function freshDeck() {
-  return SUITS.flatMap(suit => {
-    return VALUES.map(value => {
+function freshDeck() {               //Creating fresh deck of cards with 52 cards with all the suits and value combination
+  return SUITS.flatMap(suit => {     //Loop through all the suites and all the values and combine them into one array flatMap the same like map function but combines multiple arrays in one single array
+    return VALUES.map(value => {     //loop through all the values  and map them into array
       return new Card(suit, value)
     })
   })
